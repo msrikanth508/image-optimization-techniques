@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: sans-serif;
+  background-color: #efefef;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+.app__header {
+  background: #009688;
+  width: 100%;
+  height: 72px;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.app__header--logo svg {
+  height: 40px;
+  width: 40px;
+  fill: #fff;
+}
+
+.app__header--score {
+  align-self: center;
+}
+
+.score {
+  font-size: 1.2em;
+}
+
+.messages {
+  font-style: italic;
+}
+
+p[class*="msg-"] {
+  display: none;
+}
+.show {
+  display: block !important;
+}
+.app__body {
+  max-width: 1080px;
+  margin: 20px auto;
+  margin-top: 72px;
+  padding: 20px 4px;
+}
+
+.app__body--actions {
+  text-align: center;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app__body--title {
+  margin-top: 0;
+}
+.app__body--items {
+  display: flex;
+  justify-content: center;
+}
+
+.app__body--items-actions {
+  display: flex;
+  cursor: pointer;
+  margin: 0 8px;
+}
+
+.app__body--items-actions.active .check-box {
+  background-image: url(./images/check.svg);
+}
+
+.app__footer {
+  text-align: center;
+  padding: 40px 0;
+  background: #fff;
+}
+
+.app__footer a {
+  text-decoration: none;
+  color: #009688;
+}
+.app__footer a:hover {
+  text-decoration: underline;
+}
+
+#image-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image {
+  margin: 1px;
+  height: 300px;
+  width: 100%;
+
+  /* width: 300px; */
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 600px) {
+  .image {
+    width: 49%;
+  }
+} 
+
+@media only screen and (min-width: 900px) {
+  .image {
+    width: 30%;
+  }
+} 
+
+.image__progressive {
+  filter: blur(6px);
+}
+
+.image__animate {
+  will-change: filter;
+  animation: blur 1s ease-out;
+}
+
+.check-box {
+  background-image: url(./images/uncheck.svg);
+  width: 18px;
+  height: 18px;
+  display: block;
+  margin: 0 4px;
+  background-repeat: no-repeat;
+}
+
+.flex {
+  display: flex;
+}
+
+
+#scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  background: #009688;
+  width: 50px;
+  height: 50px;
+  display: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 35px;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.5s ease;
+}
+#scroll-top.show { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#scroll-top img {
+  width: 24px;
+  height: 24px;
+}
+#scroll-top img:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+@keyframes blur {
+  0% {
+    filter: blur(6px);
+  }
+  100% {
+    filter: none;
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@-webkit-keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  /* animation: flash 1s ease-out ; */
+  animation-name: flash; 
+  animation-duration: 2s; 
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
