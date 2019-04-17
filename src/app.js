@@ -47,8 +47,13 @@ class App {
         scrollTopEle.classList.remove("hide");
         scrollTopEle.classList.add("show");
         scrollProgressEle.style.visibility = "visible";
-        scrollProgressEle.style.width = `${document.documentElement.scrollTop *
-          (100 / document.documentElement.scrollHeight)}%`;
+        if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+          scrollProgressEle.style.width = `100%`;
+        } else {
+          scrollProgressEle.style.width = `${document.documentElement.scrollTop *
+            (100 / document.documentElement.scrollHeight)}%`;
+        }
+        
       } else {
         scrollTopEle.classList.add("hide");
         scrollProgressEle.style.visibility = "hidden";

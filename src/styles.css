@@ -29,8 +29,8 @@ body {
   background: #004d40;
 }
 .app__header--content {
-  height: 72px;
-  padding: 16px;
+  /* height: 72px; */
+  padding: 12px;
 
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,7 +40,10 @@ body {
           justify-content: space-between;
   color: #fff;
 }
-
+.app__header--logo {
+  display: flex;
+  align-items: center;
+}
 .app__header--logo svg {
   height: 40px;
   width: 40px;
@@ -57,7 +60,7 @@ body {
 .app__body {
   max-width: 1080px;
   margin: 20px auto;
-  margin-top: 72px;
+  margin-top: 65px;
   padding: 20px 4px;
 }
 
