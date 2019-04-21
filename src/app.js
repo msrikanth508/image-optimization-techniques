@@ -7,9 +7,9 @@ const messages = {
   msg0:
     "Default browser behaviour, it starts downloading all images while parsing DOM tree.",
   msg1:
-    "In this approach, we will load low resolution image first. High quality image will be downloaded when user scrolls to specific image (Viewport).",
+    "In this method, we will load low-resolution image first, and when a user sees or scrolls towards it, we will start downloading high-resolution image. It eliminates unnecessary downloading and saves lots of data in case of mobile users.",
   msg2:
-    "This is same as progressive approach. Expect we avoid downloding low resolution image and cover with single placeholder image."
+    "It's the same as progressive load except that we avoid displaying low-resolution image. Instead, we will display one placeholder image."
 };
 class App {
   constructor() {
