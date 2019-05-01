@@ -14,12 +14,18 @@ const messages = {
 class App {
   constructor() {
     this.mode = 0;
+    if(!!window.URLSearchParams) {
+      this.mode  = +new URLSearchParams(location.search).get('mode') || 0
+    }
     this.count = 0;
     this.header = new Header(300);
     this.bindEvents()
     this.loadAppWithMode();
   }
   bindEvents() {
+    document
+      .querySelector(`.app__body--action-${this.mode}`)
+      .classList.add("active");
     // bind buttons
     const radioBtns = document.querySelectorAll(".app__body--actions");
     // scroll top icon
